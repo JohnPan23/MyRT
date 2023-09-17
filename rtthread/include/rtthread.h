@@ -25,6 +25,10 @@
 *                               线程接口
 -------------------------------------------------------------------------
 */
+
+
+
+//线程初始化：栈、函数、控制块最终联系起来
 rt_err_t rt_thread_init(struct rt_thread                *thread,
                         void              (*entry)(void *parameter),
                         void                            *parameter,

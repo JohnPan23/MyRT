@@ -76,11 +76,7 @@ typedef                                 rt_ubase_t rt_dev_t;
 #define                                 RT_EINTR    9               /**< Interrupted system call */
 #define                                 RT_EINVAL   10              /**< Invalid argument */
 
-/*
-*************************************************************************
-*                               双向链表结构体
-*************************************************************************
-*/
+//======================================= 双向链表结构体 ==================================================================
 struct rt_list_node {
     struct rt_list_node *next;              /* 指向后一个节点 */
     struct rt_list_node *prev;              /* 指向前一个节点 */
@@ -88,24 +84,20 @@ struct rt_list_node {
 typedef struct rt_list_node rt_list_t;
 
 
-/*
-*************************************************************************
-*                               线程结构体
-*************************************************************************
-*/
+//======================================== 线程结构体 ====================================================================
 
-struct rt_thread {
-    void        *stack_addr;      /* 线程起始地址 */
-    void        *entry;	          /* 线程入口地址 */
+struct rt_thread {                      // 定义线程控制块变量，就使用形式：struct rt_thread 变量名
+    void        *stack_addr;            // 线程起始地址
+    void        *entry;	                // 线程入口地址：无限for循序函数
+    void        *parameter;	            // 形参
+    void        *sp;	                // 栈地址
+    rt_uint32_t stack_size;             // 栈大小，单位为字节
 
-    void        *parameter;	      /* 线程形参 */
-
-    void        *sp;	          /* 线程栈指针 */
-    rt_uint32_t stack_size;       /* 线程栈大小，单位为字节 */
-
-    rt_list_t   tlist;            /* 线程链表节点 */
+    rt_list_t   tlist;                  // 线程链表节点
 };
-typedef struct rt_thread *rt_thread_t;
+
+
+typedef struct rt_thread *rt_thread_t;  // 定义线程控制块指针就使用形式：rt_thread_t 变量名
 
 
 
