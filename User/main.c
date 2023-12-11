@@ -20,12 +20,12 @@ ALIGN(RT_ALIGN_SIZE)                                // 设置变量需要多少�
                                                     // RT_ALIGN_SIZE 是一个在rtconfig.h中定义的宏，默认为 4，表示 4 个字节对齐
 rt_uint8_t rt_flag1_thread_stack[512];              // 定义线程栈：一个预先定义好的全局数据，数据类型为rt_uint8_t，大小设置为512。
 rt_uint8_t rt_flag2_thread_stack[512];
-// 线程声明
-_Noreturn void flag1_thread_entry(void *p_arg);
 
+_Noreturn void flag1_thread_entry(void *p_arg);     // 线程声明
 _Noreturn void flag2_thread_entry(void *p_arg);
 
-
+//================================ 函数声明 ================================
+void delay(rt_uint32_t);
 
 int main() {
     // 硬件初始化
