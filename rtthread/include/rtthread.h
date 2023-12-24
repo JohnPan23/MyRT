@@ -25,6 +25,10 @@
 *                               线程接口
 -------------------------------------------------------------------------
 */
+
+
+
+//线程初始化：栈、函数、控制块最终联系起来
 rt_err_t rt_thread_init(struct rt_thread                *thread,
                         void              (*entry)(void *parameter),
                         void                            *parameter,
@@ -43,17 +47,5 @@ void rt_system_scheduler_init(void);
 void rt_schedule_insert_thread(struct rt_thread *thread);
 void rt_system_scheduler_start(void);
 void rt_schedule(void);
-
-
-
-
-
-
-
-
-
-
-
-
 
 #endif //MYRT_RTTHREAD_H
