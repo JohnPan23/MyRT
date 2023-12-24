@@ -48,16 +48,4 @@ void rt_schedule_insert_thread(struct rt_thread *thread);
 void rt_system_scheduler_start(void);
 void rt_schedule(void);
 
-
-
-
-
-
-
-
-
-
-
-
-
 #endif //MYRT_RTTHREAD_H

@@ -28,13 +28,10 @@ _Noreturn void flag2_thread_entry(void *p_arg);
 void delay(rt_uint32_t);
 
 int main() {
-    // 硬件初始化
-    // 将硬件相关的初始化放在这里，如果是软件仿真则没有相关初始化代码
-
-    // 调度器初始化
+    // 1、硬件初始化：将硬件相关的初始化放在这里，如果是软件仿真则没有相关初始化代码
+    // 2、调度器初始化
     rt_system_scheduler_init();
-
-    // 初始化线程：栈、函数、控制块最终联系起来。
+    // 3、初始化线程：栈、函数、控制块最终联系起来。
     rt_thread_init(&rt_flag1_thread,                            // 线程控制块
                    flag1_thread_entry,                          // 线程入口地址（无限for循环）
                    RT_NULL,                           // 线程形参
